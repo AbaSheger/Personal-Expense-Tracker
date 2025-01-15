@@ -90,6 +90,11 @@ namespace PersonalExpenseTracker
 
         private void LoadCategories()
         {
+            if (categoryManager.IsCategoryListEmpty())
+            {
+                MessageBox.Show("The category list is empty.");
+            }
+
             comboBoxCategory.Items.Clear();
             comboBoxCategory.Items.Add("All Categories");
             foreach (var category in categoryManager.GetCategories())
