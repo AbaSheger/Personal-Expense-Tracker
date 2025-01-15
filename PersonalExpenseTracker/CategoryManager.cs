@@ -35,5 +35,10 @@ namespace PersonalExpenseTracker
         {
             return categories;
         }
+
+        public bool IsCategoryListEmpty()
+        {
+            return !categories.Any();
+        }
     }
 }

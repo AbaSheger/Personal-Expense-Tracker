@@ -10,6 +10,7 @@ namespace PersonalExpenseTracker
         public CategoryForm()
         {
             InitializeComponent();
+            CheckIfCategoryListIsEmpty();
         }
 
         public CategoryForm(Category category) : this()
@@ -132,6 +133,15 @@ namespace PersonalExpenseTracker
             }
 
             return true;
+        }
+
+        private void CheckIfCategoryListIsEmpty()
+        {
+            CategoryManager categoryManager = new CategoryManager();
+            if (categoryManager.IsCategoryListEmpty())
+            {
+                MessageBox.Show("The category list is empty.");
+            }
         }
 
         private System.Windows.Forms.Label labelName;

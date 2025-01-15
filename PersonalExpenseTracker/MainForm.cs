@@ -133,6 +133,10 @@ namespace PersonalExpenseTracker
 
         private void LoadCategories()
         {
+            if (categoryManager.IsCategoryListEmpty())
+            {
+                MessageBox.Show("The category list is empty.");
+            }
             // Load categories if needed
         }
 
