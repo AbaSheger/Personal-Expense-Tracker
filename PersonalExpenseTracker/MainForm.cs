@@ -192,7 +192,7 @@ namespace PersonalExpenseTracker
 
         private void ButtonViewSummary_Click(object sender, EventArgs e)
         {
-            ExpenseSummaryForm summaryForm = new ExpenseSummaryForm();
+            ExpenseSummaryForm summaryForm = new ExpenseSummaryForm(expenseManager, categoryManager);
             summaryForm.ShowDialog();
         }
 

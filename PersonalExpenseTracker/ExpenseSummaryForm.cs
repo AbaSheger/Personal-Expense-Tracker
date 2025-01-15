@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Linq;
 
 namespace PersonalExpenseTracker
 {
@@ -62,9 +63,9 @@ namespace PersonalExpenseTracker
             // 
             // chartExpenses
             // 
-            chartArea1.Name = "ChartArea1";
+            ChartArea chartArea1 = new ChartArea("ChartArea1");
             this.chartExpenses.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
+            Legend legend1 = new Legend("Legend1");
             this.chartExpenses.Legends.Add(legend1);
             this.chartExpenses.Location = new System.Drawing.Point(12, 120);
             this.chartExpenses.Name = "chartExpenses";
