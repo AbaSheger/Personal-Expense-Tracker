@@ -22,6 +22,52 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 4. Build the solution.
 5. Run the application.
 
+## Detailed Instructions
+
+### Adding an Expense
+
+1. Click on the "Add Expense" button.
+2. Fill in the details of the expense in the form that appears.
+3. Click "Save" to add the expense.
+
+### Editing an Expense
+
+1. Select the expense you want to edit from the list.
+2. Click on the "Edit Expense" button.
+3. Modify the details in the form that appears.
+4. Click "Save" to update the expense.
+
+### Deleting an Expense
+
+1. Select the expense you want to delete from the list.
+2. Click on the "Delete Expense" button.
+3. Confirm the deletion in the prompt that appears.
+
+### Adding a Category
+
+1. Click on the "Add Category" button.
+2. Fill in the details of the category in the form that appears.
+3. Click "Save" to add the category.
+
+### Editing a Category
+
+1. Select the category you want to edit from the list.
+2. Click on the "Edit Category" button.
+3. Modify the details in the form that appears.
+4. Click "Save" to update the category.
+
+### Deleting a Category
+
+1. Select the category you want to delete from the list.
+2. Click on the "Delete Category" button.
+3. Confirm the deletion in the prompt that appears.
+
+### Viewing Expense Summary
+
+1. Click on the "View Summary" button.
+2. Select the category and date range for the summary.
+3. Click "Generate Summary" to view the summary chart.
+
 ## Contributing
 
 We welcome contributions to the Personal Expense Tracker project. Please follow these guidelines when contributing:

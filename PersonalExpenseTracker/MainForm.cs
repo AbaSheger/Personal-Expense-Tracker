@@ -138,6 +138,13 @@ namespace PersonalExpenseTracker
                 MessageBox.Show("The category list is empty.");
             }
             // Load categories if needed
+            comboBoxCategory.Items.Clear();
+            comboBoxCategory.Items.Add("All Categories");
+            foreach (var category in categoryManager.GetCategories())
+            {
+                comboBoxCategory.Items.Add(category.Name);
+            }
+            comboBoxCategory.SelectedIndex = 0;
         }
 
         private void ButtonAddExpense_Click(object sender, EventArgs e)
@@ -186,12 +193,26 @@ namespace PersonalExpenseTracker
 
         private void ButtonEditCategory_Click(object sender, EventArgs e)
         {
-            // Implement edit category functionality
+            if (dataGridViewExpenses.SelectedRows.Count > 0)
+            {
+                Category selectedCategory = (Category)dataGridViewExpenses.SelectedRows[0].DataBoundItem;
+                CategoryForm categoryForm = new CategoryForm(selectedCategory);
+                if (categoryForm.ShowDialog() == DialogResult.OK)
+                {
+                    categoryManager.UpdateCategory(categoryForm.Category);
+                    LoadCategories();
+                }
+            }
         }
 
         private void ButtonDeleteCategory_Click(object sender, EventArgs e)
         {
-            // Implement delete category functionality
+            if (dataGridViewExpenses.SelectedRows.Count > 0)
+            {
+                Category selectedCategory = (Category)dataGridViewExpenses.SelectedRows[0].DataBoundItem;
+                categoryManager.RemoveCategory(selectedCategory);
+                LoadCategories();
+            }
         }
 
         private void ButtonViewSummary_Click(object sender, EventArgs e)
