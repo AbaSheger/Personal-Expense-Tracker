@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Text.Json;
 
 namespace PersonalExpenseTracker
 {
@@ -65,6 +67,21 @@ namespace PersonalExpenseTracker
         {
             return expenses.GroupBy(e => e.Date.Date)
                            .ToDictionary(g => g.Key, g => g.Sum(e => e.Amount));
+        }
+
+        public void SaveExpensesToFile(string filePath)
+        {
+            var json = JsonSerializer.Serialize(expenses);
+            File.WriteAllText(filePath, json);
+        }
+
+        public void LoadExpensesFromFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                var json = File.ReadAllText(filePath);
+                expenses = JsonSerializer.Deserialize<List<Expense>>(json);
+            }
         }
     }
 }
