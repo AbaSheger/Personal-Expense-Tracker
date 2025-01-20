@@ -1,5 +1,17 @@
 # Personal-Expense-Tracker
 
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Detailed Instructions](#detailed-instructions)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Code of Conduct](#code-of-conduct)
+- [License](#license)
+
 ## Description
 
 The Personal Expense Tracker is a Windows Forms application designed to help users manage their personal finances efficiently. The application allows users to add, edit, and categorize expenses, as well as visualize their spending habits through various charts and graphs.
@@ -12,6 +24,14 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 - Visualize spending habits with charts and graphs
 - Predict future expenses using AI-based expense prediction
 
+## Technologies Used
+
+- .NET 6.0
+- Windows Forms
+- System.Data.SqlClient
+- System.Windows.Forms.DataVisualization
+- MathNet.Numerics
+
 ## Setup and Installation
 
 1. Clone the repository:
@@ -22,6 +42,57 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 3. Restore NuGet packages.
 4. Build the solution.
 5. Run the application.
+
+## Usage
+
+### Adding an Expense
+
+1. Click on the "Add Expense" button.
+2. Fill in the details of the expense in the form that appears.
+3. Click "Save" to add the expense.
+
+### Editing an Expense
+
+1. Select the expense you want to edit from the list.
+2. Click on the "Edit Expense" button.
+3. Modify the details in the form that appears.
+4. Click "Save" to update the expense.
+
+### Deleting an Expense
+
+1. Select the expense you want to delete from the list.
+2. Click on the "Delete Expense" button.
+3. Confirm the deletion in the prompt that appears.
+
+### Adding a Category
+
+1. Click on the "Add Category" button.
+2. Fill in the details of the category in the form that appears.
+3. Click "Save" to add the category.
+
+### Editing a Category
+
+1. Select the category you want to edit from the list.
+2. Click on the "Edit Category" button.
+3. Modify the details in the form that appears.
+4. Click "Save" to update the category.
+
+### Deleting a Category
+
+1. Select the category you want to delete from the list.
+2. Click on the "Delete Category" button.
+3. Confirm the deletion in the prompt that appears.
+
+### Viewing Expense Summary
+
+1. Click on the "View Summary" button.
+2. Select the category and date range for the summary.
+3. Click "Generate Summary" to view the summary chart.
+
+### Predicting Future Expenses
+
+1. Click on the "Predict" button in the Expense Form.
+2. The predicted expenses for the next 6 months will be displayed in a message box.
 
 ## Detailed Instructions
 
@@ -74,6 +145,10 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 1. Click on the "Predict" button in the Expense Form.
 2. The predicted expenses for the next 6 months will be displayed in a message box.
 
+## Screenshots
+
+<!-- Add screenshots here -->
+
 ## Contributing
 
 We welcome contributions to the Personal Expense Tracker project. Please follow these guidelines when contributing:
@@ -87,3 +162,7 @@ We welcome contributions to the Personal Expense Tracker project. Please follow 
 ## Code of Conduct
 
 We expect all contributors to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md). Please read it to understand the expectations for behavior when contributing to this project.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
