@@ -10,6 +10,7 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 - Categorize expenses
 - View expense summaries
 - Visualize spending habits with charts and graphs
+- Predict future expenses using AI-based expense prediction
 
 ## Setup and Installation
 
@@ -67,6 +68,11 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 1. Click on the "View Summary" button.
 2. Select the category and date range for the summary.
 3. Click "Generate Summary" to view the summary chart.
+
+### Predicting Future Expenses
+
+1. Click on the "Predict" button in the Expense Form.
+2. The predicted expenses for the next 6 months will be displayed in a message box.
 
 ## Contributing
 

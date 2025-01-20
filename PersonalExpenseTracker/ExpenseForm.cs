@@ -33,6 +33,7 @@ namespace PersonalExpenseTracker
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonPredict = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelAmount
@@ -121,9 +122,20 @@ namespace PersonalExpenseTracker
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // buttonPredict
+            // 
+            this.buttonPredict.Location = new System.Drawing.Point(12, 117);
+            this.buttonPredict.Name = "buttonPredict";
+            this.buttonPredict.Size = new System.Drawing.Size(75, 23);
+            this.buttonPredict.TabIndex = 10;
+            this.buttonPredict.Text = "Predict";
+            this.buttonPredict.UseVisualStyleBackColor = true;
+            this.buttonPredict.Click += new System.EventHandler(this.ButtonPredict_Click);
+            // 
             // ExpenseForm
             // 
             this.ClientSize = new System.Drawing.Size(292, 152);
+            this.Controls.Add(this.buttonPredict);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxDescription);
@@ -163,6 +175,14 @@ namespace PersonalExpenseTracker
             Close();
         }
 
+        private void ButtonPredict_Click(object sender, EventArgs e)
+        {
+            var expenseManager = new ExpenseManager();
+            var predictedExpenses = expenseManager.PredictFutureExpenses(6);
+            var message = string.Join(Environment.NewLine, predictedExpenses.Select((amount, index) => $"Month {index + 1}: {amount:C}"));
+            MessageBox.Show(message, "Predicted Expenses");
+        }
+
         private bool ValidateInput()
         {
             if (string.IsNullOrWhiteSpace(textBoxAmount.Text) || !decimal.TryParse(textBoxAmount.Text, out _))
@@ -196,5 +216,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonPredict;
     }
 }
