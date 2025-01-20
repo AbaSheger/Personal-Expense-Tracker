@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text.Json;
+using MathNet.Numerics.LinearRegression; // Added for AI-related libraries
 
 namespace PersonalExpenseTracker
 {
@@ -82,6 +83,25 @@ namespace PersonalExpenseTracker
                 var json = File.ReadAllText(filePath);
                 expenses = JsonSerializer.Deserialize<List<Expense>>(json);
             }
+        }
+
+        public List<decimal> PredictFutureExpenses(int months)
+        {
+            var expenseSummaryByDate = GetExpenseSummaryByDate();
+            var dates = expenseSummaryByDate.Keys.Select(date => (double)date.ToOADate()).ToArray();
+            var amounts = expenseSummaryByDate.Values.Select(amount => (double)amount).ToArray();
+
+            var model = SimpleRegression.Fit(dates, amounts);
+
+            var futureExpenses = new List<decimal>();
+            for (int i = 1; i <= months; i++)
+            {
+                var futureDate = DateTime.Now.AddMonths(i).ToOADate();
+                var predictedAmount = model.Predict(futureDate);
+                futureExpenses.Add((decimal)predictedAmount);
+            }
+
+            return futureExpenses;
         }
     }
 }
