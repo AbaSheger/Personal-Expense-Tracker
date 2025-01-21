@@ -191,6 +191,23 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 2. The GitHub Actions workflow will automatically build and deploy the application when you push changes to the main branch.
 
+### Using Environment Files for DockerHub Login
+
+1. Ensure that you have set up the necessary secrets in your GitHub repository:
+   - `DOCKER_USERNAME`: Your DockerHub username
+   - `DOCKER_PASSWORD`: Your DockerHub password
+   - `AZURE_WEBAPP_PUBLISH_PROFILE`: Your Azure Web App publish profile
+
+2. Create a file named `DOCKERHUB_LOGIN.env` in the `.github/workflows` directory with the following content:
+   ```
+   DOCKER_USERNAME=<your-docker-username>
+   DOCKER_PASSWORD=<your-docker-password>
+   ```
+
+3. Update the GitHub Actions workflow to use the Environment Files for DockerHub login.
+
+4. The GitHub Actions workflow will automatically build and deploy the application when you push changes to the main branch.
+
 ## GitHub Codespaces Setup
 
 ### Setting up GitHub Codespaces
