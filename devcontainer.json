@@ -1,14 +1,11 @@
 {
     "name": "Personal Expense Tracker",
-    "dockerFile": "Dockerfile",
-    "runArgs": ["--init", "--privileged"],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
     "extensions": [
         "ms-azuretools.vscode-docker"
     ],
-    "postCreateCommand": "docker-compose up -d",
     "forwardPorts": [3003],
     "remoteEnv": {
         "DOTENV_CONFIG_PATH": "${containerWorkspaceFolder}/.env"

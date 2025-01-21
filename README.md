@@ -11,7 +11,6 @@
 - [Contributing](#contributing)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
-- [Deployment](#deployment)
 - [GitHub Codespaces Setup](#github-codespaces-setup)
 
 ## Description
@@ -168,45 +167,6 @@ We expect all contributors to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Deployment
-
-### Building and Running the Docker Container
-
-1. Build the Docker image:
-   ```
-   docker build -t personal-expense-tracker .
-   ```
-2. Run the Docker container:
-   ```
-   docker run -d -p 80:80 personal-expense-tracker
-   ```
-
-### Using the GitHub Actions Workflow
-
-1. Ensure that you have set up the necessary secrets in your GitHub repository:
-   - `DOCKER_USERNAME`: Your DockerHub username
-   - `DOCKER_PASSWORD`: Your DockerHub password
-   - `AZURE_WEBAPP_PUBLISH_PROFILE`: Your Azure Web App publish profile
-
-2. The GitHub Actions workflow will automatically build and deploy the application when you push changes to the main branch.
-
-### Using Environment Files for DockerHub Login
-
-1. Ensure that you have set up the necessary secrets in your GitHub repository:
-   - `DOCKER_USERNAME`: Your DockerHub username
-   - `DOCKER_PASSWORD`: Your DockerHub password
-   - `AZURE_WEBAPP_PUBLISH_PROFILE`: Your Azure Web App publish profile
-
-2. Create a file named `DOCKERHUB_LOGIN.env` in the `.github/workflows` directory with the following content:
-   ```
-   DOCKER_USERNAME=<your-docker-username>
-   DOCKER_PASSWORD=<your-docker-password>
-   ```
-
-3. Update the GitHub Actions workflow to use the Environment Files for DockerHub login.
-
-4. The GitHub Actions workflow will automatically build and deploy the application when you push changes to the main branch.
 
 ## GitHub Codespaces Setup
 
