@@ -12,6 +12,7 @@
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
 - [Deployment](#deployment)
+- [GitHub Codespaces Setup](#github-codespaces-setup)
 
 ## Description
 
@@ -189,3 +190,20 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
    - `AZURE_WEBAPP_PUBLISH_PROFILE`: Your Azure Web App publish profile
 
 2. The GitHub Actions workflow will automatically build and deploy the application when you push changes to the main branch.
+
+## GitHub Codespaces Setup
+
+### Setting up GitHub Codespaces
+
+1. Open the repository in GitHub and click on the "Code" button.
+2. Select "Open with Codespaces" and create a new Codespace.
+3. The Codespace will automatically install Docker and Docker Compose.
+4. The application will start using the `docker-compose.yml` file located in the project directory.
+5. The application port `3003` will be exposed and made publicly accessible using the GitHub Codespaces `Ports` feature.
+6. The environment variables will be loaded from the `.env` file in the project directory.
+
+### Accessing the Application via Public URL
+
+1. Once the Codespace is running, click on the "Ports" tab in the Codespaces interface.
+2. Locate the port `3003` and click on the "Open in Browser" button.
+3. The application will be accessible via the public URL provided by GitHub Codespaces.
