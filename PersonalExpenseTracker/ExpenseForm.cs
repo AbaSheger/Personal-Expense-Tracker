@@ -10,6 +10,7 @@ namespace PersonalExpenseTracker
         public ExpenseForm()
         {
             InitializeComponent();
+            PopulateCategoryComboBox();
         }
 
         public ExpenseForm(Expense expense) : this()
@@ -153,6 +154,15 @@ namespace PersonalExpenseTracker
 
         }
 
+        private void PopulateCategoryComboBox()
+        {
+            comboBoxCategory.Items.Clear();
+            foreach (var category in Enum.GetValues(typeof(CategoryEnum)))
+            {
+                comboBoxCategory.Items.Add(category);
+            }
+        }
+
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
@@ -160,7 +170,7 @@ namespace PersonalExpenseTracker
                 Expense = new Expense
                 {
                     Amount = decimal.Parse(textBoxAmount.Text),
-                    Category = comboBoxCategory.SelectedItem.ToString(),
+                    Category = (CategoryEnum)comboBoxCategory.SelectedItem,
                     Date = dateTimePickerDate.Value,
                     Description = textBoxDescription.Text
                 };
