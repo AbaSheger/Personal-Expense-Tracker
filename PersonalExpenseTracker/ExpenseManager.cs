@@ -43,7 +43,7 @@ namespace PersonalExpenseTracker
             return expenses;
         }
 
-        public List<Expense> GetExpensesByCategory(string category)
+        public List<Expense> GetExpensesByCategory(CategoryEnum category)
         {
             return expenses.Where(e => e.Category == category).ToList();
         }
@@ -53,12 +53,12 @@ namespace PersonalExpenseTracker
             return expenses.Sum(e => e.Amount);
         }
 
-        public decimal GetTotalExpensesByCategory(string category)
+        public decimal GetTotalExpensesByCategory(CategoryEnum category)
         {
             return expenses.Where(e => e.Category == category).Sum(e => e.Amount);
         }
 
-        public Dictionary<string, decimal> GetExpenseSummaryByCategory()
+        public Dictionary<CategoryEnum, decimal> GetExpenseSummaryByCategory()
         {
             return expenses.GroupBy(e => e.Category)
                            .ToDictionary(g => g.Key, g => g.Sum(e => e.Amount));

@@ -15,7 +15,7 @@ namespace PersonalExpenseTracker
             InitializeComponent();
             this.expenseManager = expenseManager;
             this.categoryManager = categoryManager;
-            LoadCategories();
+            PopulateCategoryComboBox();
         }
 
         private void InitializeComponent()
@@ -88,13 +88,13 @@ namespace PersonalExpenseTracker
 
         }
 
-        private void LoadCategories()
+        private void PopulateCategoryComboBox()
         {
             comboBoxCategory.Items.Clear();
             comboBoxCategory.Items.Add("All Categories");
-            foreach (var category in categoryManager.GetCategories())
+            foreach (var category in Enum.GetValues(typeof(CategoryEnum)))
             {
-                comboBoxCategory.Items.Add(category.Name);
+                comboBoxCategory.Items.Add(category);
             }
             comboBoxCategory.SelectedIndex = 0;
         }
@@ -110,7 +110,8 @@ namespace PersonalExpenseTracker
 
             if (selectedCategory != "All Categories")
             {
-                expenses = expenses.Where(expense => expense.Category == selectedCategory);
+                var selectedCategoryEnum = (CategoryEnum)Enum.Parse(typeof(CategoryEnum), selectedCategory);
+                expenses = expenses.Where(expense => expense.Category == selectedCategoryEnum);
             }
 
             var expenseSummary = expenses

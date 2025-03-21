@@ -140,9 +140,9 @@ namespace PersonalExpenseTracker
             // Load categories if needed
             comboBoxCategory.Items.Clear();
             comboBoxCategory.Items.Add("All Categories");
-            foreach (var category in categoryManager.GetCategories())
+            foreach (var category in Enum.GetValues(typeof(CategoryEnum)))
             {
-                comboBoxCategory.Items.Add(category.Name);
+                comboBoxCategory.Items.Add(category);
             }
             comboBoxCategory.SelectedIndex = 0;
         }
