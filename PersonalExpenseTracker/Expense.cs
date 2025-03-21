@@ -1,3 +1,5 @@
+using System;
+
 namespace PersonalExpenseTracker
 {
     public class Expense
