@@ -7,6 +7,7 @@ namespace PersonalExpenseTracker
     {
         private ExpenseManager expenseManager;
         private CategoryManager categoryManager;
+        private ComboBox comboBoxCategory;
 
         public MainForm()
         {
@@ -27,6 +28,7 @@ namespace PersonalExpenseTracker
             this.buttonEditCategory = new System.Windows.Forms.Button();
             this.buttonDeleteCategory = new System.Windows.Forms.Button();
             this.buttonViewSummary = new System.Windows.Forms.Button();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExpenses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,9 +110,19 @@ namespace PersonalExpenseTracker
             this.buttonViewSummary.UseVisualStyleBackColor = true;
             this.buttonViewSummary.Click += new System.EventHandler(this.ButtonViewSummary_Click);
             // 
+            // comboBoxCategory
+            // 
+            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Location = new System.Drawing.Point(12, 397);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxCategory.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.buttonViewSummary);
             this.Controls.Add(this.buttonDeleteCategory);
             this.Controls.Add(this.buttonEditCategory);
