@@ -19,17 +19,20 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 ## Features
 
 - Add, edit, and delete expenses
-- Categorize expenses (custom categories)
+- Categorize expenses using predefined categories (Food, Transportation, Utilities, Entertainment, Healthcare, Education, Miscellaneous)
+- Manage categories (add, edit, delete)
 - View expense summaries with charts
 - Filter expenses by category and date range
 - Expense prediction using linear regression
+- Persistent data storage using JSON files
 
 ## Technologies Used
 
 - .NET 6.0
 - Windows Forms
-- System.Data.SqlClient
-- System.Windows.Forms.DataVisualization
+- System.Text.Json (for data persistence)
+- System.Windows.Forms.DataVisualization (for charts and graphs)
+- MathNet.Numerics (for linear regression and expense prediction)
 
 ## Setup and Installation
 
@@ -124,4 +127,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Notes
 
-This is a Windows Forms desktop application designed to run on Windows operating systems. It uses an in-memory data structure to store expenses and categories. For production use, consider implementing a proper database backend using the System.Data.SqlClient package that is already included in the project.
+This is a Windows Forms desktop application designed to run on Windows operating systems. It uses JSON file storage to persist expenses and categories data. The application includes expense prediction functionality using linear regression analysis from the MathNet.Numerics library. For production use with larger datasets, consider implementing a proper database backend (SQL Server, SQLite, etc.).
