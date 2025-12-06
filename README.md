@@ -6,12 +6,11 @@
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
-- [Detailed Instructions](#detailed-instructions)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
-- [GitHub Codespaces Setup](#github-codespaces-setup)
+- [Notes](#notes)
 
 ## Description
 
@@ -20,10 +19,10 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 ## Features
 
 - Add, edit, and delete expenses
-- Categorize expenses
-- View expense summaries
-- Visualize spending habits with charts and graphs
-- Predict future expenses using AI-based expense prediction
+- Categorize expenses (custom categories)
+- View expense summaries with charts
+- Filter expenses by category and date range
+- Expense prediction using linear regression
 
 ## Technologies Used
 
@@ -31,71 +30,26 @@ The Personal Expense Tracker is a Windows Forms application designed to help use
 - Windows Forms
 - System.Data.SqlClient
 - System.Windows.Forms.DataVisualization
-- MathNet.Numerics
 
 ## Setup and Installation
 
+### Prerequisites
+- Windows operating system
+- Visual Studio 2019 or later (or Visual Studio Code with C# extension)
+- .NET 6.0 SDK
+
+### Installation Steps
+
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/AbaSheger/Personal-Expense-Tracker.git
    ```
 2. Open the solution file `PersonalExpenseTracker.sln` in Visual Studio.
-3. Restore NuGet packages.
-4. Build the solution.
-5. Run the application.
+3. Restore NuGet packages (Visual Studio will do this automatically, or run `dotnet restore`).
+4. Build the solution (Ctrl+Shift+B or `dotnet build`).
+5. Run the application (F5 or `dotnet run`).
 
 ## Usage
-
-### Adding an Expense
-
-1. Click on the "Add Expense" button.
-2. Fill in the details of the expense in the form that appears.
-3. Click "Save" to add the expense.
-
-### Editing an Expense
-
-1. Select the expense you want to edit from the list.
-2. Click on the "Edit Expense" button.
-3. Modify the details in the form that appears.
-4. Click "Save" to update the expense.
-
-### Deleting an Expense
-
-1. Select the expense you want to delete from the list.
-2. Click on the "Delete Expense" button.
-3. Confirm the deletion in the prompt that appears.
-
-### Adding a Category
-
-1. Click on the "Add Category" button.
-2. Fill in the details of the category in the form that appears.
-3. Click "Save" to add the category.
-
-### Editing a Category
-
-1. Select the category you want to edit from the list.
-2. Click on the "Edit Category" button.
-3. Modify the details in the form that appears.
-4. Click "Save" to update the category.
-
-### Deleting a Category
-
-1. Select the category you want to delete from the list.
-2. Click on the "Delete Category" button.
-3. Confirm the deletion in the prompt that appears.
-
-### Viewing Expense Summary
-
-1. Click on the "View Summary" button.
-2. Select the category and date range for the summary.
-3. Click "Generate Summary" to view the summary chart.
-
-### Predicting Future Expenses
-
-1. Click on the "Predict" button in the Expense Form.
-2. The predicted expenses for the next 6 months will be displayed in a message box.
-
-## Detailed Instructions
 
 ### Adding an Expense
 
@@ -168,19 +122,6 @@ We expect all contributors to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## GitHub Codespaces Setup
+## Notes
 
-### Setting up GitHub Codespaces
-
-1. Open the repository in GitHub and click on the "Code" button.
-2. Select "Open with Codespaces" and create a new Codespace.
-3. The Codespace will automatically install Docker and Docker Compose.
-4. The application will start using the `docker-compose.yml` file located in the project directory.
-5. The application port `3003` will be exposed and made publicly accessible using the GitHub Codespaces `Ports` feature.
-6. The environment variables will be loaded from the `.env` file in the project directory.
-
-### Accessing the Application via Public URL
-
-1. Once the Codespace is running, click on the "Ports" tab in the Codespaces interface.
-2. Locate the port `3003` and click on the "Open in Browser" button.
-3. The application will be accessible via the public URL provided by GitHub Codespaces.
+This is a Windows Forms desktop application designed to run on Windows operating systems. It uses an in-memory data structure to store expenses and categories. For production use, consider implementing a proper database backend using the System.Data.SqlClient package that is already included in the project.
